@@ -1,5 +1,6 @@
 package com.jiawang.util;
 
+import com.jiawang.core.ACtest;
 import com.jiawang.core.annotations.bean.assembly.JiaAutowired;
 import com.jiawang.core.annotations.bean.components.JiaComponent;
 import com.jiawang.core.annotations.bean.components.JiaController;
@@ -185,6 +186,7 @@ public class BeanUtils {
                 // 获取这个bean的名字
                 String beanName = null;
                 Class<?> aClass = Class.forName(className);
+
                 JiaComponent jiaComponent = aClass.getAnnotation(JiaComponent.class);
                 JiaController jiaController = aClass.getAnnotation(JiaController.class);
                 JiaService jiaService = aClass.getAnnotation(JiaService.class);
@@ -291,12 +293,17 @@ public class BeanUtils {
      * 装配url
      */
     public static void storageUrl() {
+        // 遍历bean
         for (Map.Entry<String, Object> stringObjectEntry : beanNameMap.entrySet()) {
             Class<?> aClass = stringObjectEntry.getValue().getClass();
 
 
-
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+        boolean b = AnnotationUtils.recursiveJudgmentAnnotation(ACtest.class, Resource.class);
+        System.out.println(b);
     }
 
 

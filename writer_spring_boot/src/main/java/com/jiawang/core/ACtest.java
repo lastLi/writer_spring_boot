@@ -9,6 +9,6 @@ import com.jiawang.core.annotations.response.JiaRestController;
  *
  * @author : LiJiWang
  */
-@JiaRestController
+@JiaRestController("aa")
 public class ACtest {
 }
