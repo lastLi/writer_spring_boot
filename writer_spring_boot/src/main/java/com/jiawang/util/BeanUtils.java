@@ -205,11 +205,12 @@ public class BeanUtils {
                     beanName = jiaRepository.value();
                 }
                 if (jiaRestController != null) {
-                    JiaComponent annotation = jiaRestController.getClass().getAnnotation(JiaComponent.class);
+                    // 这里代码需要修改
+                /*    JiaComponent annotation = jiaRestController.getClass()；；
                     beanName = jiaRestController.value();
                     Field fieldValue = annotation.getClass().getField("value");
                     fieldValue.setAccessible(true);
-                    fieldValue.set(annotation, beanName);
+                    fieldValue.set(annotation, beanName);*/
                 }
                 // 如果是空，那么肯定没写，我就得帮他转换一下
                 if ("".equals(beanName)) {
